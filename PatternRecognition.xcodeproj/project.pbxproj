@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E64E81B1C1699B400437533 /* Patterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64E81A1C1699B400437533 /* Patterns.swift */; };
 		3EFCACAF1C156A4000D0121B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCACAE1C156A4000D0121B /* AppDelegate.swift */; };
 		3EFCACB11C156A4000D0121B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCACB01C156A4000D0121B /* ViewController.swift */; };
 		3EFCACB41C156A4000D0121B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFCACB21C156A4000D0121B /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E64E81A1C1699B400437533 /* Patterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patterns.swift; sourceTree = "<group>"; };
 		3EFCACAB1C156A4000D0121B /* PatternRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatternRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFCACAE1C156A4000D0121B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFCACB01C156A4000D0121B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				3EFCACB51C156A4000D0121B /* Assets.xcassets */,
 				3EFCACB71C156A4000D0121B /* LaunchScreen.storyboard */,
 				3EFCACBA1C156A4000D0121B /* Info.plist */,
+				3E64E81A1C1699B400437533 /* Patterns.swift */,
 			);
 			path = PatternRecognition;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				3EFCACB11C156A4000D0121B /* ViewController.swift in Sources */,
 				3EFCACAF1C156A4000D0121B /* AppDelegate.swift in Sources */,
+				3E64E81B1C1699B400437533 /* Patterns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +290,7 @@
 				3EFCACBF1C156A4000D0121B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
