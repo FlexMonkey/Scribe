@@ -36,7 +36,7 @@ class ScribeView: UIView
                 timer?.invalidate()
             }
             
-            UIView.animateWithDuration(0.15)
+            UIView.animateWithDuration(0.2)
             {
                 self.backgroundColor = self.inflight ? UIColor(white: 0.5, alpha: 0.5) : nil
             }
@@ -49,7 +49,11 @@ class ScribeView: UIView
         
         shapeLayer.fillColor = nil
         shapeLayer.strokeColor = UIColor.blackColor().CGColor
-        shapeLayer.lineWidth = 2
+        shapeLayer.lineWidth = 4
+
+        shapeLayer.shadowColor = UIColor.whiteColor().CGColor
+        shapeLayer.shadowOpacity = 1
+        shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
         
         layer.addSublayer(shapeLayer)
     }
@@ -112,7 +116,7 @@ class ScribeView: UIView
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        timer =  NSTimer.scheduledTimerWithTimeInterval(0.25,
+        timer =  NSTimer.scheduledTimerWithTimeInterval(0.3,
             target: self,
             selector: "timerHandler",
             userInfo: nil,
@@ -137,6 +141,13 @@ class ScribeView: UIView
         let cellWidth = max(gestureWidth / CGFloat(cellCount - 1), 1)
         let cellHeight = max(gestureHeight / CGFloat(cellCount - 1), 1)
         
+        if (gestureHeight / gestureWidth) < 0.2
+        {
+            delegate?.scribeView(self, didMatchPattern: " ")
+            
+            return
+        }
+        
         var cells = [[Bool]](count: cellCount, repeatedValue: [Bool](count: cellCount, repeatedValue: false))
         
         let origin = CGPoint(x: min(minX, maxX), y: min(minY, maxY))
@@ -149,24 +160,26 @@ class ScribeView: UIView
             cells[x][y] = true
         }
         
-        printToConsole(cells)
-        
         let strokeResult = cells.flatMap({ return $0 }).reduce(UInt64(0))
         {
             ($0 << 1 | ($1 ? 1 : 0))
         }
         
-        let bestGuess = patterns.reduce((UInt64(0), ""))
+        printToConsole(strokeResult: strokeResult, cells: cells)
+        
+        
+        
+        let bestMatch = patterns.reduce((UInt64(0), UInt64(0), ""))
         {
             let popcount = ($1.0 & strokeResult).popcount()
             
-            return popcount > $0.0 ? (popcount, $1.1) : $0
+            return popcount > $0.0 ? (popcount, $1.0, $1.1) : $0
         }
         
-        delegate?.scribeView(self, didMatchPattern: bestGuess.1)
+        delegate?.scribeView(self, didMatchPattern: bestMatch.2)
     }
     
-    func printToConsole(cells: [[Bool]])
+    func printToConsole(strokeResult strokeResult: UInt64, cells: [[Bool]])
     {
         print("")
         
@@ -176,13 +189,13 @@ class ScribeView: UIView
             
             for var j = 0 ; j < cellCount ; j++
             {
-                row += (cells[j][i] ? "◼︎" : "◻︎")
+                row += (cells[j][i] ? "*" : " ")
             }
             
             print(row)
         }
         
-        print("")
+        print("patterns[\(strokeResult)]")
     }
 }
 

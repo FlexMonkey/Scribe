@@ -42,6 +42,7 @@
 		3E1D9EC81C1751950031B066 /* scribe */ = {
 			isa = PBXGroup;
 			children = (
+				3E64E81A1C1699B400437533 /* Patterns.swift */,
 				3E1D9EC91C1751AE0031B066 /* ScribeView.swift */,
 			);
 			name = scribe;
@@ -73,7 +74,6 @@
 				3EFCACB51C156A4000D0121B /* Assets.xcassets */,
 				3EFCACB71C156A4000D0121B /* LaunchScreen.storyboard */,
 				3EFCACBA1C156A4000D0121B /* Info.plist */,
-				3E64E81A1C1699B400437533 /* Patterns.swift */,
 			);
 			path = PatternRecognition;
 			sourceTree = "<group>";
