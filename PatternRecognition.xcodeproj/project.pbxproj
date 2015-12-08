@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1D9ECA1C1751AE0031B066 /* ScribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1D9EC91C1751AE0031B066 /* ScribeView.swift */; };
 		3E64E81B1C1699B400437533 /* Patterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64E81A1C1699B400437533 /* Patterns.swift */; };
 		3EFCACAF1C156A4000D0121B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCACAE1C156A4000D0121B /* AppDelegate.swift */; };
 		3EFCACB11C156A4000D0121B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCACB01C156A4000D0121B /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E1D9EC91C1751AE0031B066 /* ScribeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScribeView.swift; path = scribe/ScribeView.swift; sourceTree = "<group>"; };
 		3E64E81A1C1699B400437533 /* Patterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patterns.swift; sourceTree = "<group>"; };
 		3EFCACAB1C156A4000D0121B /* PatternRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatternRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFCACAE1C156A4000D0121B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1D9EC81C1751950031B066 /* scribe */ = {
+			isa = PBXGroup;
+			children = (
+				3E1D9EC91C1751AE0031B066 /* ScribeView.swift */,
+			);
+			name = scribe;
+			sourceTree = "<group>";
+		};
 		3EFCACA21C156A4000D0121B = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		3EFCACAD1C156A4000D0121B /* PatternRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				3E1D9EC81C1751950031B066 /* scribe */,
 				3EFCACAE1C156A4000D0121B /* AppDelegate.swift */,
 				3EFCACB01C156A4000D0121B /* ViewController.swift */,
 				3EFCACB21C156A4000D0121B /* Main.storyboard */,
@@ -140,6 +151,7 @@
 			files = (
 				3EFCACB11C156A4000D0121B /* ViewController.swift in Sources */,
 				3EFCACAF1C156A4000D0121B /* AppDelegate.swift in Sources */,
+				3E1D9ECA1C1751AE0031B066 /* ScribeView.swift in Sources */,
 				3E64E81B1C1699B400437533 /* Patterns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
